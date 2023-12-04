@@ -17,6 +17,10 @@ const OutputView = {
   printLottoResult(result) {
     Console.print(RESULT.printLottoResult(...result));
   },
+
+  printProfitRate(profitRate) {
+    Console.print(RESULT.printProfitRate(profitRate));
+  },
 };
 
 export default OutputView;

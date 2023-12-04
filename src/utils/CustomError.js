@@ -1,9 +1,9 @@
-import { ERROR } from '../constants/messages.js'
+import { ERROR } from '../constants/messages.js';
 
 class CustomError extends Error {
-    constructor(messsage) {
-        super(`${ERROR.errorHeader} ${messsage}`)        
-    }
+  constructor(messsage) {
+    super(`${ERROR.errorHeader} ${messsage}`);
+  }
 }
 
-export default CustomError
+export default CustomError;

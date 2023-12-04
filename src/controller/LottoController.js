@@ -5,6 +5,7 @@ import { NUMBERS } from '../constants/constants.js';
 import LottoMachine from '../model/LottoMachine.js';
 import Lotto from '../model/Lotto.js';
 import LottoResult from '../model/LottoResult.js';
+import Profit from '../model/Profit.js';
 
 class LottoController {
   #amount;
@@ -29,6 +30,8 @@ class LottoController {
       this.#userLottoNumber,
       this.#userBonusNumber,
     );
+    this.profitRate = this.getProfitRate(this.#amount, this.#lottoResult);
+    OutputView.printProfitRate(this.profitRate);
   }
 
   async getAmount() {
@@ -81,13 +84,25 @@ class LottoController {
   }
 
   getLottoResult(winningNumbers, userNumber, bonusNumber) {
-    const lottoResult = new LottoResult(winningNumbers,userNumber,bonusNumber);
+    const lottoResult = new LottoResult(
+      winningNumbers,
+      userNumber,
+      bonusNumber,
+    );
 
     const result = lottoResult.getResult();
 
     OutputView.printLottoResult(result);
-    
+
     return result;
+  }
+
+  getProfitRate(amount, lottoResult) {
+    const profit = new Profit(amount, lottoResult);
+
+    const profitRate = profit.getProfitRate();
+
+    return profitRate;
   }
 }
 
