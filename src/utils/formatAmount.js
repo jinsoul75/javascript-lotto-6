@@ -1,6 +1,16 @@
-const formatAmount = (amount) => {
-    const amountWithComma = amount.toLocaleString();
-    return amountWithComma;
-}
+const formatAmount = amount => {
+  const parts = amount.toString().split('.');
+  
+  const integerPart = parts[0];
 
-export default formatAmount
+  const formattedIntegerPart = integerPart.replace(
+    /\B(?=(\d{3})+(?!\d))/g,
+    ',',
+  );
+
+  return parts.length > 1
+    ? `${formattedIntegerPart}.${parts[1]}`
+    : formattedIntegerPart;
+};
+
+export default formatAmount;

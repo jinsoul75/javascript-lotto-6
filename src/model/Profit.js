@@ -18,18 +18,10 @@ class Profit {
     return profit;
   }
 
-  #roundRate(number) {
-    return number.toFixed(1);
-  }
-
   getProfitRate() {
     const profitRate = (this.profit / this.amount) * 100;
 
-    if (!Number.isInteger(profitRate)) {
-      return profitRate.toFixed(1);
-    }
-
-    return profitRate;
+    return formatAmount(profitRate.toFixed(1));
   }
 }
 
