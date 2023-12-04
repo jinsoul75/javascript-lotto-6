@@ -45,7 +45,7 @@ class LottoController {
   getLottoWinningNumbers(amount) {
     const lottoTicketQuantity = amount / NUMBERS.purchaseUnit;
 
-    OutputView.printQuentity(lottoTicketQuantity);
+    OutputView.printquantity(lottoTicketQuantity);
 
     const lottoWinningNumbers =
       LottoMachine.getLottoWinningNumbers(lottoTicketQuantity);
@@ -81,16 +81,12 @@ class LottoController {
   }
 
   getLottoResult(winningNumbers, userNumber, bonusNumber) {
-    const lottoResult = new LottoResult(
-      winningNumbers,
-      userNumber,
-      bonusNumber,
-    )
+    const lottoResult = new LottoResult(winningNumbers,userNumber,bonusNumber);
 
     const result = lottoResult.getResult();
 
     OutputView.printLottoResult(result);
-
+    
     return result;
   }
 }

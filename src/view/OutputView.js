@@ -6,8 +6,8 @@ const OutputView = {
     Console.print(message);
   },
 
-  printQuentity(quentity) {
-    Console.print(MESSAGES.printQuentity(quentity));
+  printquantity(quantity) {
+    Console.print(MESSAGES.printquantity(quantity));
   },
 
   printLottoWinningNumbers(numbers) {

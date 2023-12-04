@@ -2,12 +2,12 @@ import { Random } from '@woowacourse/mission-utils';
 import { NUMBERS } from '../constants/constants.js';
 
 class LottoMachine {
-  static getLottoWinningNumbers(quentity) {
+  static getLottoWinningNumbers(quantity) {
     const lottoWinningNumbers = [];
 
     let count = 0;
 
-    while (count < quentity) {
+    while (count < quantity) {
       const lottoWinningNumber = Random.pickUniqueNumbersInRange(
         NUMBERS.minNumber,
         NUMBERS.maxNumber,
